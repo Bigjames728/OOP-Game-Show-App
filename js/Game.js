@@ -56,7 +56,11 @@ class Game {
     won
     */
     checkForWin() {
-
+        if (this.activePhrase.letters.classList !== 'hide') {
+            return this.gameOver(gameWon);
+        } else {
+            return false;
+        }
     };
 
     /**
