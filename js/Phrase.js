@@ -33,11 +33,31 @@
         return letters
     };
 
-    checkLetter() {
+    /**
+    * Checks if passed letter is in phrase
+    * @param (string) letter - Letter to check
+    */
+    checkLetter(letter) {
+        return this.phrase.includes(letter);
+    };
 
-    }
 
-    showMatchedLetter() {
+    /**
+    * Displays passed letter on screen after a match is found
+    * @param (string) letter - Letter to display
+    */
 
-    }
+    // I was not comfortable with writing the code below. I used classList below because it allows you to access an elements list of classes, allowing you to then manipulate the DOM.
+    showMatchedLetter(letter) {
+        let ul = document.getElementById('phrase').firstElementChild;
+
+        for ( let i = 0; i < this.phrase.length; i++ ) {
+            let phraseMatch = ul.getElementsByClassName(letter)[i];
+
+            if (phraseMatch) {
+                phraseMatch.classList = `show letter ${letter}`;
+                phraseMatch.textContent = letter;
+            }
+        }
+    };
  }
