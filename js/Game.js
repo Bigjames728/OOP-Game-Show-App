@@ -41,15 +41,30 @@ class Game {
 
     }
 
+    /**
+    * Increases the value of the missed property
+    * Removes a life from the scoreboard
+    * Checks if player has remaining lives and ends game if player is out
+    */
     removeLife() {
 
-    }
+    };
 
+    /**
+    * Checks for winning move
+    * @return {boolean} True if game has been won, false if game wasn't
+    won
+    */
     checkForWin() {
 
-    }
+    };
 
-    gameOver() {
+    /**
+    * Displays game over message
+    * @param {boolean} gameWon - Whether or not the user won the game
+    */
+    gameOver(gameWon) {
 
-    }
+    };
+
  }
