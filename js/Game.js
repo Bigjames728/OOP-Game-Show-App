@@ -14,13 +14,18 @@ class Game {
     * @return {array} An array of phrases that could be used in the game
     */
     createPhrases() {
-        const phraseArray = [new Phrase('Do you like gaming'), new Phrase('The sky is blue'), new Phrase('Puppies are cute'), new Phrase('I love to rap'), new Phrase('My girlfriend is named Mattie')];
+        const phraseArray = [new Phrase('Do you like cake'), new Phrase('The sky is blue'), new Phrase('Puppies are cute'), new Phrase('I love to rap'), new Phrase('My girlfriend is Mattie')];
         return phraseArray
     };
 
-
+    /**
+    * Begins game by selecting a random phrase and displaying it to user
+    */
     startGame() {
-
+        let startScreen = document.getElementById('overlay');
+        startScreen.style.display = 'none';
+        this.activePhrase = this.getRandomPhrase();
+        this.activePhrase.addPhraseToDisplay();
     }
 
     /**
