@@ -50,11 +50,11 @@ class Game {
         if (this.missed < 4) {
             const scoreboard = document.getElementById('scoreboard');
             const image = scoreboard.getElementsByTagName("img");
-            let currentImage = image.this.missed;
+            let currentImage = image[this.missed];
 
             if (currentImage.src.includes('liveHeart.png')) {
                 let lostHeart = currentImage.src.replace('liveHeart.png', 'lostHeart.png');
-                currentImage = lostHeart;
+                currentImage.src = lostHeart;
             }
         } else {
             this.gameOver();
