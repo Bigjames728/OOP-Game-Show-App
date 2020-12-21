@@ -47,8 +47,22 @@ class Game {
     * Checks if player has remaining lives and ends game if player is out
     */
     removeLife() {
+        if (this.missed < 4) {
+            const scoreboard = document.getElementById('scoreboard');
+            const image = scoreboard.getElementsByTagName("img");
+            let currentImage = image.this.missed;
 
+            if (currentImage.src.includes('liveHeart.png')) {
+                let lostHeart = currentImage.src.replace('liveHeart.png', 'lostHeart.png');
+                currentImage = lostHeart;
+            }
+        } else {
+            this.gameOver();
+        }
+            this.missed++
     };
+
+
 
     /**
     * Checks for winning move
@@ -56,7 +70,8 @@ class Game {
     won
     */
     checkForWin() {
-        if (this.activePhrase.letters.classList !== 'hide') {
+        const checkHide = document.getElementsByClassName('hide');
+        if (checkHide.length === 0) {
             return this.gameOver(gameWon);
         } else {
             return false;
@@ -68,7 +83,17 @@ class Game {
     * @param {boolean} gameWon - Whether or not the user won the game
     */
     gameOver(gameWon) {
+        document.getElementById('overlay').style.display = 'block';
+        let gameMessage = document.getElementById('game-over-message');
+
+        if (this.gameOver(gameWon)) {
+            gameMessage.textContent = 'You won, way to go!';
+            document.getElementsById('overlay').className = 'win';
+        } else {
+            gameMessage.textContent = 'Bummer, maybe next time!';
+            document.getElementsById('overlay').className = 'lose';
+        }
 
     };
 
- }
+}
