@@ -52,7 +52,7 @@
         let ul = document.getElementById('phrase').firstElementChild;
 
         for ( let i = 0; i < this.phrase.length; i++ ) {
-            let phraseMatch = ul.getElementsByClassName(letter[i]);
+            let phraseMatch = ul.getElementsByClassName(letter)[i];
 
             if (phraseMatch) {
                 phraseMatch.classList = `show letter ${letter}`;
