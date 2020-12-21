@@ -19,7 +19,7 @@
     // Next I appended the li elements that were created to the ul and returned the letters.
     addPhraseToDisplay() {
         const letters = this.phrase.split('');
-        const ul = document.getElementById('phrase');
+        const ul = document.querySelector('#phrase ul');
 
         for (let i = 0; i < letters.length; i++) {
             let li = document.createElement('li');
