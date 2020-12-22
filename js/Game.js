@@ -49,6 +49,9 @@ class Game {
         } else {
             this.activePhrase.showMatchedLetter(button.textContent);
             button.classList = 'chosen';
+            if (this.checkForWin()) {
+                this.gameOver(true)
+            }
         }
         button.disabled = true;
     };
