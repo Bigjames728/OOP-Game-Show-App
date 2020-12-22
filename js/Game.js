@@ -72,7 +72,7 @@ class Game {
     checkForWin() {
         const checkHide = document.getElementsByClassName('hide');
         if (checkHide.length === 0) {
-            return this.gameOver(gameWon);
+            return this.gameOver(true);
         } else {
             return false;
         }
@@ -86,12 +86,12 @@ class Game {
         document.getElementById('overlay').style.display = 'block';
         let gameMessage = document.getElementById('game-over-message');
 
-        if (this.gameOver(gameWon)) {
+        if (gameWon) {
             gameMessage.textContent = 'You won, way to go!';
-            document.getElementsById('overlay').className = 'win';
+            document.getElementById('overlay').className = 'win';
         } else {
             gameMessage.textContent = 'Bummer, maybe next time!';
-            document.getElementsById('overlay').className = 'lose';
+            document.getElementById('overlay').className = 'lose';
         }
 
     };
