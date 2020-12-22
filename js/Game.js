@@ -110,6 +110,30 @@ class Game {
             document.getElementById('overlay').className = 'lose';
         }
 
+        // Reset the game board 
+
+        let firstPhrase = document.getElementById('phrase').firstElementChild;
+        firstPhrase.innerHTML = '';
+
+        // Reset buttons on screen - don't understand this very well but it works. Need to work on this.
+        
+        const button = document.querySelectorAll('.keyrow');
+        
+        for (const letters of button) {
+            let items = letters.children;
+            for (const element of items) {
+                element.className = 'key';
+                element.removeAttribute('disabled');
+            }
+        }
+
+        // Reset lives
+
+        const lives = document.querySelectorAll('.tries img');
+
+        for (let i = 0; i < lives.length; i++) {
+            lives[i].setAttribute('src', 'images/liveHeart.png')
+        }
     };
 
 }
