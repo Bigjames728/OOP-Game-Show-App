@@ -37,9 +37,14 @@ class Game {
         return this.phrases[randomPhrase];
     }
 
-    handleInteraction() {
-
-    }
+    /**
+    * Handles onscreen keyboard button clicks
+    * @param (HTMLButtonElement) button - The clicked button element
+    */
+    handleInteraction(button) {
+        console.log(button);
+        };      
+    
 
     /**
     * Increases the value of the missed property
