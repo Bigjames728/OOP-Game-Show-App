@@ -121,6 +121,7 @@ class Game {
         
         for (const letters of button) {
             let items = letters.children;
+            console.log(items);
             for (const element of items) {
                 element.className = 'key';
                 element.removeAttribute('disabled');
