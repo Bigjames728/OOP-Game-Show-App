@@ -117,9 +117,9 @@ class Game {
 
         // Reset buttons on screen - don't understand this very well but it works. Need to work on this.
         
-        const button = document.querySelectorAll('.keyrow');
+        const keys = document.querySelectorAll('.keyrow');
         
-        for (const letters of button) {
+        for (const letters of keys) {
             let items = letters.children;
             console.log(items);
             for (const element of items) {
