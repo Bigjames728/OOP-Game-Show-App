@@ -43,6 +43,7 @@ class Game {
     */
     handleInteraction(button) {
         let key = this.activePhrase.checkLetter(button.textContent);
+        button.disabled = true;
         if (!key) {
             button.classList = 'wrong';
             this.removeLife();
@@ -53,7 +54,7 @@ class Game {
                 this.gameOver(true)
             }
         }
-        button.disabled = true;
+        
     };
     
 
