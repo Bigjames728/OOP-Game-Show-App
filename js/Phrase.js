@@ -48,7 +48,7 @@
     * @param (string) letter - Letter to display
     */
 
-    // I was not comfortable with writing the code below. I used classList below because it allows you to access an elements list of classes, allowing you to then manipulate the DOM.
+    // I used classList below because it allows you to access an elements list of classes, allowing you to then manipulate the DOM.
     showMatchedLetter(letter) {
         let ul = document.getElementById('phrase').firstElementChild;
 
