@@ -28,6 +28,7 @@
             } else {
                 li.setAttribute('class', `hide letter ${letters[i]}`);
             }
+            li.textContent = letters[i];
             ul.appendChild(li)
         }
         return letters
