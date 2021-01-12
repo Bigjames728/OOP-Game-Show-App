@@ -23,11 +23,13 @@
 
         for (let i = 0; i < letters.length; i++) {
             let li = document.createElement('li');
+            
             if (letters[i] === ' ') {
                 li.setAttribute('class', `space ${letters[i]}`);
             } else {
                 li.setAttribute('class', `hide letter ${letters[i]}`);
             }
+            
             ul.appendChild(li)
         }
         return letters
@@ -56,7 +58,6 @@
 
             if (phraseMatch) {
                 phraseMatch.classList = `show letter ${letter}`;
-                phraseMatch.textContent = letter;
             }
         }
     };
